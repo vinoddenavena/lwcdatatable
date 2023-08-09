@@ -1,0 +1,15 @@
+<template>
+    <lightning-card variant="Narrow" title="Hello" icon-name="standard:account">
+ 
+        <lightning-datatable
+           key-field="Id"
+           data={allContacts.data}
+           columns={columnsList}
+           onsave={handleRowAction}
+           draft-values={draftValues}
+           onrowaction={handleDeleteRecord}
+           onrowselection={handleRowSelection}>
+       </lightning-datatable>
+   </lightning-card>
+
+</template>
