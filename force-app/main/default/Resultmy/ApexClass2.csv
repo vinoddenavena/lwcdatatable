@@ -1,0 +1,39 @@
+Problem,Severity,File,Line,Column,Rule,Description,URL,Category,Engine,
+1,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailService.cls,5,27,ApexDoc,Missing ApexDoc @description,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_documentation.html#apexdoc,Documentation,pmd,
+2,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailService.cls,5,27,StdCyclomaticComplexity,The class 'MyEmailService' has a Standard Cyclomatic Complexity of 12 (Highest = 11).,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_design.html#stdcyclomaticcomplexity,Design,pmd,
+3,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailService.cls,14,41,ApexDoc,Missing ApexDoc @description,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_documentation.html#apexdoc,Documentation,pmd,
+4,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailService.cls,14,41,StdCyclomaticComplexity,The method 'handleInboundEmail' has a Standard Cyclomatic Complexity of 11.,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_design.html#stdcyclomaticcomplexity,Design,pmd,
+5,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailService.cls,14,41,CognitiveComplexity,"The method 'handleInboundEmail(Messaging.InboundEmail, Messaging.InboundEnvelope)' has a cognitive complexity of 42, current threshold is 15",https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_design.html#cognitivecomplexity,Design,pmd,
+6,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailService.cls,14,41,CyclomaticComplexity,"The method 'handleInboundEmail(Messaging.InboundEmail, Messaging.InboundEnvelope)' has a cyclomatic complexity of 15.",https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_design.html#cyclomaticcomplexity,Design,pmd,
+7,5,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailService.cls,34,45,UnusedLocalVariable,Variable 'responses' defined but not used,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_bestpractices.html#unusedlocalvariable,Best Practices,pmd,
+8,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailService.cls,42,21,AvoidDeeplyNestedIfStmts,Deeply nested if..then statements are hard to read,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_design.html#avoiddeeplynestedifstmts,Design,pmd,
+9,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailService.cls,90,20,AvoidDebugStatements,Avoid debug statements since they impact on performance,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_performance.html#avoiddebugstatements,Performance,pmd,
+10,5,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailServiceTest.cls,29,38,UnusedLocalVariable,Variable 'result' defined but not used,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_bestpractices.html#unusedlocalvariable,Best Practices,pmd,
+11,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\MyEmailServiceTest.cls,40,16,ApexAssertionsShouldIncludeMessage,'System.assertEquals' should have 3 parameters.,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_bestpractices.html#apexassertionsshouldincludemessage,Best Practices,pmd,
+12,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\TestEmails.cls,11,46,ApexDoc,Missing ApexDoc @return,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_documentation.html#apexdoc,Documentation,pmd,
+13,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\TestEmails.cls,11,46,ApexDoc,Missing or mismatched ApexDoc @param,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_documentation.html#apexdoc,Documentation,pmd,
+14,1,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\myTestingExampleMethod.cls,4,27,ClassNamingConventions,The class name 'myTestingExampleMethod' doesn't match '[A-Z][a-zA-Z0-9_]*',https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_codestyle.html#classnamingconventions,Code Style,pmd,
+15,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\myTestingExampleMethod.cls,52,16,AvoidDebugStatements,Avoid debug statements since they impact on performance,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_performance.html#avoiddebugstatements,Performance,pmd,
+16,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\myTestingExampleMethod.cls,52,16,DebugsShouldUseLoggingLevel,Calls to System.debug should specify a logging level.,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_bestpractices.html#debugsshoulduselogginglevel,Best Practices,pmd,
+17,3,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\myTestingExampleMethod.cls,152,17,AvoidDeeplyNestedIfStmts,Deeply nested if..then statements are hard to read,https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_design.html#avoiddeeplynestedifstmts,Design,pmd,
+18,1,C:\my practice lwc project\lwcdatatable\force-app\main\default\classes\myTestingExampleMethodTest.cls,2,15,ClassNamingConventions,The test class name 'myTestingExampleMethodTest' doesn't match '[A-Z][a-zA-Z0-9_]*',https://pmd.github.io/pmd-6.55.0/pmd_rules_apex_codestyle.html#classnamingconventions,Code Style,pmd,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,_,Id
+,,,,,,,,,[User],0055g00000AvVd8AAF
+,,,,,,,,,[User],0055g00000AvVdBAAV
+,,,,,,,,,[User],0055g00000Db4PsAAJ
+,,,,,,,,,[User],0055g00000HBa6cAAD
+,,,,,,,,,[User],0055g00000HBa7VAAT
+,,,,,,,,,[User],0055g00000Fms4pAAB
+,,,,,,,,,[User],0055g00000HBXheAAH
+,,,,,,,,,[User],0055g00000HBYthAAH
+,,,,,,,,,[User],0055g00000HBa6DAAT
+,,,,,,,,,[User],0055g00000HC6GBAA1
+,,,,,,,,,[User],0055g00000HC6GQAA1
+,,,,,,,,,[User],0055g00000Ai2ZbAAJ
+,,,,,,,,,[User],0055g00000AkYDEAA3
+,,,,,,,,,[User],0055g00000AvVd7AAF
+,,,,,,,,,[User],0055g00000AvVdDAAV

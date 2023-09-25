@@ -1,0 +1,141 @@
+<template>
+	<lightning-card title="Custom Objects" icon-name="custom:custom63">
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="1">
+			</lightning-layout-item>
+			<lightning-layout-item size="3" style="margin:20px">
+				<lightning-combobox label="Select an Object" value={selectedObject} options={objects}
+					onchange={handleChange}></lightning-combobox>
+
+			</lightning-layout-item>
+			<lightning-layout-item size="2">
+			</lightning-layout-item>
+			<lightning-layout-item size="3">
+				<lightning-combobox label="Picklist Fields" value={selectedField} options={picklistFields} 
+					onchange={handleFieldChange}></lightning-combobox>
+				<lightning-combobox name="picklist" label="Select a Picklist value" value={selectedValue}
+					onchange={handleValueChange} options={picklistValues}></lightning-combobox>
+			</lightning-layout-item>
+			<lightning-layout-item size="2">
+			</lightning-layout-item>
+		</lightning-layout>
+		<lightning-button-icon icon-name="utility:refresh" slot="actions" class="slds-p-around_medium" title="Refresh"
+			onclick={refreshHandler}></lightning-button-icon>
+		<lightning-button slot="actions" label="Send List Email" onclick={sendEmailHandler}></lightning-button>
+
+
+	</lightning-card>
+	<lightning-card>
+		
+		<template if:true={isData}>
+			<div class="slds-box">
+				<lightning-datatable data={oppList} columns={COLS} key-field="Id" onrowselection={handleRowSelection}>
+				</lightning-datatable>
+			</div>
+		</template>
+		<template if:false={isData}>
+			<p style="font-size: 15px;text-align: center;font-weight: 500;">Please select an Object</p>
+		</template>
+		<template if:true={isData}>
+		<template if:false={oppList.length}>
+			<p style="font-size: 15px;text-align: center;font-weight: 500;">No Data Found...!</p>
+		</template>
+		</template>
+	</lightning-card>
+	<template if:true={sendAction}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open slds-modal_medium">
+			<div class="slds-modal__container">
+				<div class="slds-modal__header">
+					<h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Email</h1>
+				</div>
+				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+					<div class="slds-form-element slds-form-element_horizontal slds-form-element_1-col">
+						<label class="slds-form-element__label" for="to">To</label>
+						<div class="slds-form-element__control">
+							<lightning-input type="text" value={toAddress} disabled></lightning-input>
+						</div>
+					</div>
+
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="subject"> </label>
+						<div class="slds-form-element__control">
+							<input
+                        type="text"
+                        name="subject"
+                        id="subject"
+                        value={subject}
+                        placeholder="Subject..."
+                        class="slds-input"
+                        onchange={handleSubjectChange}
+
+                    />
+                </div>
+						</div>
+
+						<div class="slds-form-element">
+							<div class="slds-form-element__control slds-var-p-top_small">
+								<lightning-input-rich-text value={body} onchange={handleBodyChange}>
+								</lightning-input-rich-text>
+							</div>
+						</div>
+
+						<div if:true={fileData} style="float:left;padding:15px;">
+							<lightning-pill label={fileName} onremove={handleRemove}>
+								<lightning-icon icon-name="doctype:attachment" alternative-text="Account">
+								</lightning-icon>
+							</lightning-pill>
+						</div>
+
+					</div>
+					<div class="slds-modal__footer">
+						<div class="slds-grid slds-grid_align-end slds-var-p-around_x-small">
+							<div class="slds-col slds-var-p-right_x-small slds-var-p-bottom_x-small slds-is-relative">
+								<!-- Pop over -->
+								<section if:true={wantToUploadFile} aria-describedby="dialog-body-id-108"
+									aria-labelledby="dialog-heading-id-3"
+									class="slds-popover slds-popover_walkthrough slds-nubbin_bottom slds-is-absolute popover"
+									role="dialog">
+									<button
+                        class="
+                            slds-button slds-button_icon slds-button_icon-small
+                            slds-float_right
+                            slds-popover__close
+                            slds-button_icon-inverse
+                        "
+                        title="Close dialog"
+                    >
+                        <lightning-button-icon
+                            variant="bare-inverse"
+                            size="small"
+                            onclick={toggleFileUpload}
+                            icon-name="utility:close"
+                            alternative-text="close"
+                        ></lightning-button-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+									<header class="slds-popover__header slds-p-vertical_medium">
+										<h2 id="dialog-heading-id-3" class="slds-text-heading_medium">Upload Files</h2>
+									</header>
+									<div class="slds-popover__body" id="dialog-body-id-108">
+										<lightning-input type="file" label="Select File"
+											onchange={handleFileInputChange}></lightning-input>
+									</div>
+								</section>
+								<!-- Pop over -->
+
+								<lightning-button-icon icon-name="utility:attach" onclick={toggleFileUpload}
+									alternative-text="Attach File" title="Attach_File">
+								</lightning-button-icon>
+							</div>
+							<lightning-button variant="brand outline" label="Cancel" onclick={offModal}
+								class="slds-p-around_x-small"></lightning-button>
+							<lightning-button variant="brand" label="Send" onclick={sendEmail}
+								class="slds-p-around_x-small"></lightning-button>
+						</div>
+					</div>
+				</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+</template>
